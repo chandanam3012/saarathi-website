@@ -1,115 +1,102 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SAARATHI NGO | Home</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAARATHI NGO | Supporting Rural Education in Karnataka</title>
+
+<meta name="description" content="SAARATHI NGO supports education for rural students by providing school supplies, mentorship and digital exposure across Karnataka.">
+
+<meta name="keywords" content="Saarathi NGO, education NGO Karnataka, rural education support, NGO Bangalore">
+
+<meta name="author" content="SAARATHI NGO">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
-:root {
-  --brand-blue: #2b2e83;
-  --brand-green: #2f6b2f;
+:root{
+--brand-blue:#2b2e83;
+--brand-green:#2f6b2f;
 }
 
-html {
-  scroll-behavior: smooth;
+body{
+font-family:"Open Sans",sans-serif;
+margin:0;
+overflow-x:hidden;
 }
 
-body {
-  font-family: "Open Sans", sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+/* NAVBAR */
+
+.navbar-custom{
+background:transparent;
+position:fixed;
+width:100%;
+z-index:1000;
+transition:0.4s;
+padding:15px 0;
 }
 
-/* ================= NAVBAR ================= */
-
-.navbar-custom {
-  background: transparent;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-  transition: all 0.4s ease;
-  padding: 15px 0;
+.navbar-scrolled{
+background:var(--brand-blue);
+padding:8px 0;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-.navbar-scrolled {
-  background-color: var(--brand-blue);
-  padding: 8px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+/* HERO */
+
+.hero-section{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+url("images/hero-bg.png");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
-  font-weight: 600;
+.button-group{
+display:flex;
+gap:20px;
 }
 
-/* ================= HERO ================= */
-
-.hero-section {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url("images/hero-bg.png");
-  background-size: cover;
-  background-position: center top; /* 🔥 FIXED */
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.btn-saarathi{
+padding:10px 28px;
+border-radius:50px;
+font-weight:700;
+text-transform:uppercase;
+font-size:13px;
+text-decoration:none;
 }
 
-/* Hero Fade Animation */
-
-.button-group {
-  display: flex;
-  gap: 20px;
-  animation: fadeHero 1.5s ease forwards;
-  opacity: 0;
+.btn-green{
+background:var(--brand-green);
+color:white;
 }
 
-@keyframes fadeHero {
-  to {
-    opacity: 1;
-  }
+.btn-outline{
+background:white;
+color:var(--brand-blue);
+border:2px solid var(--brand-blue);
 }
 
-/* ================= BUTTONS ================= */
+/* QUOTE */
 
-.btn-saarathi {
-  padding: 10px 28px;
-  border-radius: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 13px;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
+.quote-sidebar{
+border-left:5px solid var(--brand-green);
+padding:20px;
+background:#f8f9fa;
+border-radius:0 15px 15px 0;
 }
 
-.btn-saarathi:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-}
-
-.btn-green {
-  background-color: var(--brand-green);
-  color: white;
-  border: 2px solid var(--brand-green);
-}
-
-.btn-outline {
-  background-color: white;
-  color: var(--brand-blue);
-  border: 2px solid var(--brand-blue);
-}
-  /* Floating Donate Button */
+/* FLOATING BUTTONS */
 
 .floating-donate{
 position:fixed;
@@ -117,46 +104,40 @@ bottom:25px;
 right:25px;
 background:#2f6b2f;
 color:white;
-padding:12px 22px;
+padding:12px 24px;
 border-radius:50px;
 font-weight:bold;
 text-decoration:none;
+z-index:9999;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
-z-index:999;
-transition:0.3s;
 }
 
-.floating-donate:hover{
-background:#245624;
-transform:translateY(-3px);
+.whatsapp-button{
+position:fixed;
+bottom:90px;
+right:25px;
+background:#25D366;
+color:white;
+padding:12px 18px;
+border-radius:50px;
+font-weight:bold;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* ================= FADE-IN ================= */
+/* MOBILE */
 
+@media(max-width:768px){
 
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+.hero-section{
+height:80vh;
 }
 
-/* ================= INTRO ================= */
-
-.quote-sidebar {
-  border-left: 5px solid var(--brand-green);
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 0 15px 15px 0;
+.button-group{
+flex-direction:column;
+align-items:center;
 }
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 768px) {
-
-  .hero-section {
-    height: 80vh;
-  }
-  @media (max-width:768px){
 
 .navbar-nav .nav-item{
 margin:10px 0;
@@ -164,34 +145,25 @@ margin:10px 0;
 
 }
 
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-  }
-
-}
-
 </style>
+
 </head>
 
 <body>
+
+<!-- NAVBAR -->
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
 
 <div class="container-fluid px-4">
 
-<a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
-
-<img src="images/logo.png" width="40" height="40" class="me-2 rounded">
-
+<a class="navbar-brand fw-bold" href="index.html">
+<img src="images/logo.png" width="40" class="me-2 rounded">
 SAARATHI
-
 </a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-
 <span class="navbar-toggler-icon"></span>
-
 </button>
 
 <div class="collapse navbar-collapse" id="navbarNav">
@@ -219,7 +191,7 @@ SAARATHI
 </li>
 
 <li class="nav-item mt-2 mt-lg-0">
-<a class="btn btn-light fw-bold text-primary px-4 rounded-pill shadow-sm" href="donate.html">
+<a class="btn btn-light fw-bold text-primary px-4 rounded-pill" href="donate.html">
 Donate
 </a>
 </li>
@@ -235,96 +207,206 @@ Donate
 <!-- HERO -->
 
 <div class="hero-section">
-  <div class="button-group">
-    <a href="donate.html" class="btn-saarathi btn-green">Support Us</a>
-    <a href="#intro" class="btn-saarathi btn-outline">Learn More</a>
-  </div>
+
+<div class="button-group">
+
+<a href="donate.html" class="btn-saarathi btn-green">
+Support Us
+</a>
+
+<a href="#intro" class="btn-saarathi btn-outline">
+Learn More
+</a>
+
 </div>
+
+</div>
+
+<!-- ACTIVITY SLIDER -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-4" style="color:#2b2e83;">
+Our Activities
+</h2>
+
+<div id="activityCarousel" class="carousel slide" data-bs-ride="carousel">
+
+<div class="carousel-inner rounded shadow">
+
+<div class="carousel-item active">
+<img src="images/activity1.jpg" class="d-block w-100" style="height:400px;object-fit:cover;">
+</div>
+
+<div class="carousel-item">
+<img src="images/activity2.jpg" class="d-block w-100" style="height:400px;object-fit:cover;">
+</div>
+
+<div class="carousel-item">
+<img src="images/activity3.jpg" class="d-block w-100" style="height:400px;object-fit:cover;">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- INTRO -->
 
-<section id="intro" class="py-5 bg-white fade-in">
-<div class="container py-3">
+<section id="intro" class="py-5">
+
+<div class="container">
+
 <div class="row g-5">
 
-<div class="col-lg-8 fade-in">
-<h2 class="fw-bold mb-4" style="color: var(--brand-blue)">Who We Are</h2>
+<div class="col-lg-8">
+
+<h2 class="fw-bold mb-4" style="color:#2b2e83;">
+Who We Are
+</h2>
 
 <p class="lead">
-Saarathi is a community-driven non-profit organization dedicated
-to supporting the education and holistic development of rural
-students in Karnataka.
+Saarathi is a community-driven non-profit organization supporting the education and development of rural students in Karnataka.
 </p>
 
 <p class="text-muted">
-Working closely with government schools, we bridge educational
-gaps by providing essential supplies and digital exposure.
+We collaborate with government schools to bridge educational gaps by providing supplies, mentoring and digital exposure.
 </p>
+
 </div>
 
 <div class="col-lg-4">
-<div class="quote-sidebar shadow-sm fade-in">
-<p class="h5 fst-italic mb-0">
-“We don’t just support education—we build confidence, choices,
-and hope.”
+
+<div class="quote-sidebar shadow-sm">
+
+<p class="h5 fst-italic">
+“We don’t just support education—we build confidence, choices, and hope.”
 </p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- MISSION -->
+
+<section class="py-5 bg-light text-center">
+
+<div class="container">
+
+<h2 class="fw-bold mb-4" style="color:#2b2e83;">
+Our Mission
+</h2>
+
+<p class="lead mx-auto" style="max-width:750px;">
+We empower rural students through education resources, mentorship and confidence-building initiatives.
+</p>
+
+</div>
+
+</section>
+
+<!-- IMPACT -->
+
+<section class="py-5 text-center">
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-4">
+<h1 style="color:#2f6b2f;">500+</h1>
+<p>Students Supported</p>
+</div>
+
+<div class="col-md-4">
+<h1 style="color:#2f6b2f;">20+</h1>
+<p>Schools Connected</p>
+</div>
+
+<div class="col-md-4">
+<h1 style="color:#2f6b2f;">100+</h1>
+<p>Volunteers</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="py-5 bg-light">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-5" style="color:#2b2e83;">
+Our Journey
+</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="p-4 bg-white shadow rounded text-center">
+<h5 class="text-success">April 2025</h5>
+<p>Summer Camp for government school students.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="p-4 bg-white shadow rounded text-center">
+<h5 class="text-success">June 2025</h5>
+<p>Distribution of school bags and stationery.</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="p-4 bg-white shadow rounded text-center">
+<h5 class="text-success">July 2025</h5>
+<p>Educational activities in multiple schools.</p>
 </div>
 </div>
 
 </div>
+
 </div>
-</section>
-  <!-- ================= MISSION ================= -->
 
-<section class="py-5 bg-light fade-in">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4" style="color: var(--brand-blue);">
-      Our Mission
-    </h2>
-    <p class="lead mx-auto" style="max-width: 750px;">
-      We aim to empower rural students through access to education,
-      digital tools, mentorship, and confidence-building programs.
-      Education is not just learning — it is opportunity.
-    </p>
-  </div>
 </section>
 
-<!-- ================= IMPACT ================= -->
+<!-- CTA -->
 
-<section class="py-5 bg-white fade-in">
-  <div class="container-fluid px-4">
-    <div class="row text-center">
+<section class="py-5 text-center text-white" style="background:#2b2e83;">
 
-      <div class="col-md-4 mb-4">
-        <h1 class="fw-bold" style="color: var(--brand-green);">500+</h1>
-        <p class="text-muted">Students Supported</p>
-      </div>
+<div class="container">
 
-      <div class="col-md-4 mb-4">
-        <h1 class="fw-bold" style="color: var(--brand-green);">20+</h1>
-        <p class="text-muted">Schools Connected</p>
-      </div>
+<h2 class="fw-bold mb-3">
+Be the Change
+</h2>
 
-      <div class="col-md-4 mb-4">
-        <h1 class="fw-bold" style="color: var(--brand-green);">100+</h1>
-        <p class="text-muted">Volunteers</p>
-      </div>
+<p class="mb-4">
+Join us in transforming young lives through education.
+</p>
 
-    </div>
-  </div>
+<a href="donate.html" class="btn btn-light fw-bold px-4 rounded-pill">
+Donate Now
+</a>
+
+</div>
+
 </section>
 
-<!-- ================= CALL TO ACTION ================= -->
-
-<section class="py-5 text-center fade-in" style="background: var(--brand-blue); color: white;">
-  <div class="container">
-    <h2 class="fw-bold mb-3">Be the Change</h2>
-    <p class="mb-4">Join us in transforming young lives through education.</p>
-    <a href="donate.html" class="btn btn-light fw-bold px-4 rounded-pill">
-      Donate Now
-    </a>
-  </div>
-</section>
+<!-- FOOTER -->
 
 <footer style="background:#2b2e83;color:white;" class="pt-5 pb-3">
 
@@ -332,99 +414,60 @@ and hope.”
 
 <div class="row">
 
-<!-- NGO Info -->
-
-<div class="col-md-4 mb-4">
-
-<h5 class="fw-bold">SAARATHI</h5>
-
-<p>
-Supporting education and empowering rural students across Karnataka through
-community engagement and educational resources.
-</p>
-
+<div class="col-md-4">
+<h5>SAARATHI</h5>
+<p>Supporting education and empowering rural students across Karnataka.</p>
 </div>
 
-
-<!-- Quick Links -->
-
-<div class="col-md-4 mb-4">
-
-<h5 class="fw-bold">Quick Links</h5>
-
+<div class="col-md-4">
+<h5>Quick Links</h5>
 <ul class="list-unstyled">
-
 <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
-
 <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
-
-<li><a href="programs.html" class="text-white text-decoration-none">Programs</a></li>
-
 <li><a href="gallery.html" class="text-white text-decoration-none">Gallery</a></li>
-
 <li><a href="donate.html" class="text-white text-decoration-none">Donate</a></li>
-
 <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
-
 </ul>
-
 </div>
 
-
-<!-- Contact -->
-
-<div class="col-md-4 mb-4">
-
-<h5 class="fw-bold">Contact</h5>
-
-<p class="mb-1">
-📧 saarathitrust@gmail.com
-</p>
-
-<p class="mb-1">
-📞 +91 7411403290
-</p>
-
-<p>
-📍 #164, 2nd Floor, 1st Main  
-BEML 4th Stage, RR Nagar  
-Bangalore – 560098
-</p>
-
+<div class="col-md-4">
+<h5>Contact</h5>
+<p>📧 saarathitrust@gmail.com</p>
+<p>📞 +91 7411403290</p>
+<p>📍 RR Nagar, Bangalore – 560098</p>
 </div>
 
 </div>
 
-
-<hr style="border-color:rgba(255,255,255,0.2);">
-
+<hr>
 
 <div class="text-center small">
-
-© 2026 SAARATHI NGO | Building Confidence, Choices, and Hope
-
+© 2026 SAARATHI NGO
 </div>
 
 </div>
 
 </footer>
-  <a href="donate.html" class="floating-donate">
+
+<!-- FLOATING BUTTONS -->
+
+<a href="https://wa.me/917411403290" class="whatsapp-button" target="_blank">
+💬 WhatsApp
+</a>
+
+<a href="donate.html" class="floating-donate">
 ❤ Donate
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar-custom");
-  navbar.classList.toggle("navbar-scrolled", window.scrollY > 50);
+window.addEventListener("scroll",function(){
+const navbar=document.querySelector(".navbar-custom");
+navbar.classList.toggle("navbar-scrolled",window.scrollY>50);
 });
 </script>
 
 </body>
 </html>
-
-
-
-
-
+```
