@@ -10,22 +10,55 @@
 
 <style>
 
-body {
-  font-family: "Open Sans", sans-serif;
-  background: #f8f9fa;
+:root{
+--brand-blue:#2b2e83;
+--brand-green:#2f6b2f;
 }
 
-.donate-card {
-  border-radius: 25px;
-  padding: 50px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-  background: white;
+body{
+font-family:"Open Sans", sans-serif;
+background: linear-gradient(135deg,#eef2ff,#e9f7ef);
+min-height:100vh;
+display:flex;
+align-items:center;
 }
+
+/* Donation Card */
+
+.donate-card{
+border-radius:25px;
+padding:50px;
+box-shadow:0 25px 60px rgba(0,0,0,0.12);
+background:white;
+text-align:center;
+}
+
+/* Heading */
+
+.donate-title{
+color:var(--brand-blue);
+font-weight:700;
+}
+
+/* QR image */
 
 .qr-img{
-  width:230px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+width:230px;
+border-radius:18px;
+box-shadow:0 15px 40px rgba(0,0,0,0.18);
+}
+
+/* 80G badge */
+
+.tax-box{
+background:#f0fff4;
+border-left:5px solid var(--brand-green);
+padding:12px 18px;
+border-radius:8px;
+display:inline-block;
+margin-bottom:20px;
+font-weight:600;
+color:#2f6b2f;
 }
 
 </style>
@@ -34,31 +67,37 @@ body {
 
 <body>
 
-<div class="container py-5">
+<div class="container">
 <div class="row justify-content-center">
-<div class="col-lg-8">
+<div class="col-lg-7">
 
-<div class="donate-card text-center">
+<div class="donate-card">
 
-<h2 class="fw-bold mb-4">Support Education. Change Lives.</h2>
+<h2 class="donate-title mb-3">
+Support Education. Change Lives.
+</h2>
 
-<p class="mb-4 text-muted">
+<p class="text-muted mb-4">
 Your contribution helps provide books, digital tools,
 and mentorship to rural students.  
 You can donate any amount that you wish to support our mission.
 </p>
+
+<div class="tax-box">
+Donations are eligible for tax exemption under Section 80G
+</div>
 
 <hr class="my-4">
 
 <h5 class="fw-bold">Scan & Donate</h5>
 
 <p class="text-muted">
-Scan the QR code using Google Pay, PhonePe, Paytm, or any UPI app.
+Use Google Pay, PhonePe, Paytm or any UPI app
 </p>
 
-<img src="images/donate-qr.png" alt="UPI QR Code" class="qr-img mt-3">
+<img src="images/donate-qr.png" class="qr-img mt-3">
 
-<p class="mt-3 fw-bold">
+<p class="mt-3 fw-bold" style="color:var(--brand-blue);">
 UPI ID: saarathi@sbi
 </p>
 
