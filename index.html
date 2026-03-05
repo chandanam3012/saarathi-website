@@ -1,63 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAARATHI NGO | Home</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SAARATHI NGO | Home</title>
 
-    <style>
-      :root {
-        --brand-blue: #2b2e83;
-        --brand-green: #2f6b2f;
-      }
-      body {
-        font-family: "Open Sans", sans-serif;
-        margin: 0;
-        padding: 0;
-      }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
 
-      /* Navbar Fix: Ensuring links are visible */
-      .navbar-custom {
-        background-color: var(--brand-blue);
-        padding: 8px 0;
-      }
-      .navbar-dark .navbar-nav .nav-link {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-weight: 600;
-      }
+<style>
 
-      /* Hero Section Setup */
-     
+:root {
+  --brand-blue: #2b2e83;
+  --brand-green: #2f6b2f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar-custom {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s ease;
+  padding: 20px 0;
+}
+
+.navbar-scrolled {
+  background-color: var(--brand-blue);
+  padding: 8px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600;
+}
+
+/* ================= HERO ================= */
+
 .hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: 
+  background:
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url("images/hero-bg.png") center center / cover no-repeat;
+    url("images/hero-bg.png") center center / cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-      /* MOVING BUTTONS HIGHER: Now at 42% to be safely above heads */
-      .button-group {
-  position: relative;
+/* Apple-style hero fade */
+.button-group {
   display: flex;
   gap: 20px;
-  z-index: 2;
+  animation: fadeHero 1.5s ease forwards;
+  opacity: 0;
 }
 
-    .btn-saarathi {
-  padding: 8px 24px;
+@keyframes fadeHero {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-saarathi {
+  padding: 10px 28px;
   border-radius: 50px;
   font-weight: 700;
   text-transform: uppercase;
@@ -68,145 +90,192 @@
 }
 
 .btn-saarathi:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
 }
 
-      .btn-green {
-        background-color: var(--brand-green);
-        color: white;
-        border: 2px solid var(--brand-green);
-      }
-      .btn-outline {
-        background-color: white;
-        color: var(--brand-blue);
-        border: 2px solid var(--brand-blue);
-      }
+.btn-green {
+  background-color: var(--brand-green);
+  color: white;
+  border: 2px solid var(--brand-green);
+}
 
-      /* Intro Section Styling */
-      .quote-sidebar {
-        border-left: 5px solid var(--brand-green);
-        padding: 20px;
-        background: #f8f9fa;
-        border-radius: 0 15px 15px 0;
-      }
+.btn-outline {
+  background-color: white;
+  color: var(--brand-blue);
+  border: 2px solid var(--brand-blue);
+}
 
-      /* Fix for mobile navigation and button centering */
-     @media (max-width: 768px) {
+/* ================= FADE-IN EFFECT ================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= INTRO ================= */
+
+.quote-sidebar {
+  border-left: 5px solid var(--brand-green);
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 0 15px 15px 0;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
   .hero-section {
-    height: 70vh;
+    height: 75vh;
+    background-attachment: scroll;
   }
 
   .button-group {
     flex-direction: column;
     align-items: center;
   }
+
 }
-      
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm">
-      <div class="container">
-        <a
-          class="navbar-brand d-flex align-items-center fw-bold"
-          href="index.html"
-        >
-          <img
-            src="images/logo.png"
-            alt="Logo"
-            width="40"
-            height="40"
-            class="me-2 rounded"
-          />
-          SAARATHI
-        </a>
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+</style>
+</head>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="programs.html">Programs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="btn btn-light ms-lg-3 fw-bold text-primary px-4 rounded-pill shadow-sm"
-                href="donate.html"
-                >Donate</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<body>
 
-    <div class="hero-section">
-      <div class="button-group">
-        <a href="donate.html" class="btn-saarathi btn-green shadow-sm"
-          >Support Us</a
-        >
-        <a href="#intro" class="btn-saarathi btn-outline shadow-sm"
-          >Learn More</a
-        >
-      </div>
-    </div>
+<!-- ================= NAVBAR ================= -->
 
-    <section id="intro" class="py-5 bg-white">
-      <div class="container py-3">
-        <div class="row g-5">
-          <div class="col-lg-8">
-            <h2 class="fw-bold mb-4" style="color: var(--brand-blue)">
-              Who We Are
-            </h2>
-            <p class="lead">
-              Saarathi is a community-driven non-profit organization dedicated
-              to supporting the education and holistic development of rural
-              students in Karnataka.
-            </p>
-            <p class="text-muted">
-              Working closely with government schools, we bridge educational
-              gaps by providing essential supplies and digital exposure. We
-              believe every child deserves access to quality learning,
-              regardless of their background.
-            </p>
-          </div>
-          <div class="col-lg-4">
-            <div class="quote-sidebar shadow-sm">
-              <p class="h5 fst-italic mb-0">
-                “We don’t just support education—we build confidence, choices,
-                and hope.”
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+<div class="container">
 
-    <footer class="bg-dark text-white py-4 text-center">
-      <p class="mb-0 small">
-        © 2026 SAARATHI NGO | Building Confidence, Choices, and Hope
-      </p>
-    </footer>
+<a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+<img src="images/logo.png" alt="Logo" width="40" height="40" class="me-2 rounded"/>
+SAARATHI
+</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto align-items-center">
+
+<li class="nav-item">
+<a class="nav-link active" href="index.html">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="about.html">About</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="programs.html">Programs</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="gallery.html">Gallery</a>
+</li>
+
+<li class="nav-item">
+<a class="btn btn-light ms-lg-3 fw-bold text-primary px-4 rounded-pill shadow-sm" href="donate.html">Donate</a>
+</li>
+
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<div class="hero-section">
+  <div class="button-group">
+    <a href="donate.html" class="btn-saarathi btn-green">Support Us</a>
+    <a href="#intro" class="btn-saarathi btn-outline">Learn More</a>
+  </div>
+</div>
+
+<!-- ================= INTRO ================= -->
+
+<section id="intro" class="py-5 bg-white fade-in">
+<div class="container py-3">
+<div class="row g-5">
+
+<div class="col-lg-8 fade-in">
+<h2 class="fw-bold mb-4" style="color: var(--brand-blue)">Who We Are</h2>
+
+<p class="lead">
+Saarathi is a community-driven non-profit organization dedicated
+to supporting the education and holistic development of rural
+students in Karnataka.
+</p>
+
+<p class="text-muted">
+Working closely with government schools, we bridge educational
+gaps by providing essential supplies and digital exposure. We
+believe every child deserves access to quality learning,
+regardless of their background.
+</p>
+</div>
+
+<div class="col-lg-4">
+<div class="quote-sidebar shadow-sm fade-in">
+<p class="h5 fst-italic mb-0">
+“We don’t just support education—we build confidence, choices,
+and hope.”
+</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-dark text-white py-4 text-center">
+<p class="mb-0 small">
+© 2026 SAARATHI NGO | Building Confidence, Choices, and Hope
+</p>
+</footer>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+/* Navbar scroll effect */
+window.addEventListener("scroll", function () {
+  const navbar = document.querySelector(".navbar-custom");
+  navbar.classList.toggle("navbar-scrolled", window.scrollY > 50);
+});
+
+/* Fade-in on scroll */
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+  threshold: 0.2
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("show");
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+</script>
+
+</body>
 </html>
-
-
