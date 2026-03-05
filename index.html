@@ -34,7 +34,7 @@ body {
   width: 100%;
   z-index: 1000;
   transition: all 0.4s ease;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
 .navbar-scrolled {
@@ -54,19 +54,19 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  padding-top: 100px;
   background-image: 
     linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
     url("images/hero-bg.png");
   background-size: cover;
-  background-position: center 75%;
+  background-position: center top; /* 🔥 FIXED */
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Apple-style hero fade */
+/* Hero Fade Animation */
+
 .button-group {
   display: flex;
   gap: 20px;
@@ -110,7 +110,7 @@ body {
   border: 2px solid var(--brand-blue);
 }
 
-/* ================= FADE-IN EFFECT ================= */
+/* ================= FADE-IN ================= */
 
 .fade-in {
   opacity: 0;
@@ -137,8 +137,7 @@ body {
 @media (max-width: 768px) {
 
   .hero-section {
-    height: 75vh;
-    background-attachment: scroll;
+    height: 80vh;
   }
 
   .button-group {
@@ -152,8 +151,6 @@ body {
 </head>
 
 <body>
-
-<!-- ================= NAVBAR ================= -->
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
 <div class="container">
@@ -195,7 +192,7 @@ SAARATHI
 </div>
 </nav>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <div class="hero-section">
   <div class="button-group">
@@ -204,7 +201,7 @@ SAARATHI
   </div>
 </div>
 
-<!-- ================= INTRO ================= -->
+<!-- INTRO -->
 
 <section id="intro" class="py-5 bg-white fade-in">
 <div class="container py-3">
@@ -221,9 +218,7 @@ students in Karnataka.
 
 <p class="text-muted">
 Working closely with government schools, we bridge educational
-gaps by providing essential supplies and digital exposure. We
-believe every child deserves access to quality learning,
-regardless of their background.
+gaps by providing essential supplies and digital exposure.
 </p>
 </div>
 
@@ -240,49 +235,20 @@ and hope.”
 </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
-
 <footer class="bg-dark text-white py-4 text-center">
 <p class="mb-0 small">
 © 2026 SAARATHI NGO | Building Confidence, Choices, and Hope
 </p>
 </footer>
 
-<!-- ================= SCRIPTS ================= -->
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-
-/* Navbar scroll effect */
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar-custom");
   navbar.classList.toggle("navbar-scrolled", window.scrollY > 50);
 });
-
-/* Fade-in on scroll */
-const faders = document.querySelectorAll(".fade-in");
-
-const appearOptions = {
-  threshold: 0.2
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("show");
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-
 </script>
 
 </body>
 </html>
-
-
-
