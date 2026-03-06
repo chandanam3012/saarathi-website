@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 
@@ -43,57 +44,43 @@ font-weight:600;
 /* HERO */
 
 .hero-section{
-
 height:90vh;
-
 background:
 linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
 url("images/hero-bg.png");
-
 background-size:cover;
 background-position:top center;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 text-align:center;
 color:white;
-
 }
 
 .hero-title{
-
 font-family:"Montserrat",sans-serif;
 font-size:48px;
 font-weight:700;
-
 }
 
 .hero-sub{
-
 font-size:18px;
 max-width:650px;
 margin:auto;
-
 }
 
 .button-group{
-
 margin-top:25px;
 display:flex;
 gap:20px;
 justify-content:center;
-
 }
 
 .btn-saarathi{
-
 padding:12px 28px;
 border-radius:40px;
 font-weight:700;
 text-decoration:none;
-
 }
 
 .btn-green{
@@ -114,6 +101,25 @@ border-left:5px solid var(--brand-green);
 padding:20px;
 background:#f8f9fa;
 border-radius:0 15px 15px 0;
+}
+
+/* DONATION OPTIONS */
+
+.donation-card{
+border-radius:15px;
+padding:25px;
+background:white;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:center;
+transition:0.3s;
+}
+
+.donation-card:hover{
+transform:translateY(-5px);
+}
+
+.donation-card h4{
+color:var(--brand-green);
 }
 
 /* FLOATING BUTTONS */
@@ -207,7 +213,7 @@ SAARATHI
 <a class="nav-link" href="gallery.html">Gallery</a>
 </li>
 
-<!-- RESOURCES DROPDOWN -->
+<!-- RESOURCES -->
 
 <li class="nav-item dropdown">
 
@@ -225,7 +231,7 @@ Resources
 
 </li>
 
-<!-- BE A PART -->
+<!-- GET INVOLVED -->
 
 <li class="nav-item dropdown">
 
@@ -338,106 +344,67 @@ We collaborate with government schools to bridge educational gaps by providing s
 </section>
 
 
-<!-- MISSION -->
-
-<section class="py-5 bg-light text-center">
-
-<div class="container">
-
-<h2 class="fw-bold mb-4" style="color:#2b2e83">
-Our Mission
-</h2>
-
-<p class="lead mx-auto" style="max-width:750px">
-We empower rural students through education resources, mentorship and confidence-building initiatives.
-</p>
-
-</div>
-
-</section>
-
-
-<!-- IMPACT -->
-
-<section class="py-5 text-center">
-
-<div class="container">
-
-<div class="row">
-
-<div class="col-md-4">
-<h1 style="color:#2f6b2f">500+</h1>
-<p>Students Supported</p>
-</div>
-
-<div class="col-md-4">
-<h1 style="color:#2f6b2f">20+</h1>
-<p>Schools Connected</p>
-</div>
-
-<div class="col-md-4">
-<h1 style="color:#2f6b2f">100+</h1>
-<p>Volunteers</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- JOURNEY -->
+<!-- DONATION OPTIONS -->
 
 <section class="py-5 bg-light">
 
 <div class="container">
 
 <h2 class="text-center fw-bold mb-5" style="color:#2b2e83">
-Our Journey
+Support a Cause
 </h2>
 
-<div class="row text-center">
+<div class="row g-4 text-center">
 
 <div class="col-md-4">
-<h5>2026</h5>
-<p>Expansion to new government schools and student mentorship programs.</p>
-</div>
 
-<div class="col-md-4">
-<h5>2025</h5>
-<p>School supplies distribution and educational support activities.</p>
-</div>
+<div class="donation-card">
 
-<div class="col-md-4">
-<h5>2024</h5>
-<p>Saarathi NGO established with the vision to support rural education.</p>
-</div>
+<h4>₹5000</h4>
 
-</div>
+<p>Supports 10 Students</p>
 
-</div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section class="py-5 text-center text-white" style="background:#2b2e83">
-
-<div class="container">
-
-<h2 class="fw-bold mb-3">
-Be the Change
-</h2>
-
-<p class="mb-4">
-Join us in transforming young lives through education.
-</p>
-
-<a href="donate.html" class="btn btn-light fw-bold px-4 rounded-pill">
-Donate Now
+<a href="donate.html" class="btn btn-success rounded-pill">
+Donate
 </a>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="donation-card">
+
+<h4>₹10000</h4>
+
+<p>Supports 20 Students</p>
+
+<a href="donate.html" class="btn btn-success rounded-pill">
+Donate
+</a>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="donation-card">
+
+<h4>₹25000</h4>
+
+<p>Supports One School</p>
+
+<a href="donate.html" class="btn btn-success rounded-pill">
+Donate
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -526,3 +493,4 @@ Supporting education and empowering rural students across Karnataka.
 </body>
 
 </html>
+```
