@@ -1,10 +1,13 @@
-
+```html
 <!doctype html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Support SAARATHI</title>
+
+<title>Donate | SAARATHI NGO</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,15 +18,17 @@
 --brand-green:#2f6b2f;
 }
 
+/* Page Background */
+
 body{
-font-family:"Open Sans", sans-serif;
-background: linear-gradient(135deg,#eef2ff,#e9f7ef);
+font-family:"Open Sans",sans-serif;
+background:linear-gradient(135deg,#eef2ff,#e9f7ef);
 min-height:100vh;
 display:flex;
 align-items:center;
 }
 
-/* Donation Card */
+/* Card */
 
 .donate-card{
 border-radius:25px;
@@ -40,7 +45,23 @@ color:var(--brand-blue);
 font-weight:700;
 }
 
-/* QR image */
+/* Donation options */
+
+.donation-option{
+border:2px solid #e5e7eb;
+border-radius:15px;
+padding:20px;
+transition:0.3s;
+background:#fafafa;
+}
+
+.donation-option:hover{
+border-color:var(--brand-green);
+transform:translateY(-5px);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* QR */
 
 .qr-img{
 width:230px;
@@ -48,7 +69,15 @@ border-radius:18px;
 box-shadow:0 15px 40px rgba(0,0,0,0.18);
 }
 
-/* 80G badge */
+/* UPI text */
+
+.upi-id{
+font-size:18px;
+font-weight:700;
+color:var(--brand-blue);
+}
+
+/* Tax box */
 
 .tax-box{
 background:#f0fff4;
@@ -65,11 +94,14 @@ color:#2f6b2f;
 
 </head>
 
+
 <body>
 
 <div class="container">
+
 <div class="row justify-content-center">
-<div class="col-lg-7">
+
+<div class="col-lg-8">
 
 <div class="donate-card">
 
@@ -78,13 +110,41 @@ Support Education. Change Lives.
 </h2>
 
 <p class="text-muted mb-4">
-Your contribution helps provide books, digital tools,
-and mentorship to rural students.  
-You can donate any amount that you wish to support our mission.
+Your contribution helps provide books, digital tools and mentorship 
+to rural students. Every donation creates opportunities for education.
 </p>
 
 <div class="tax-box">
 Donations are eligible for tax exemption under Section 80G
+</div>
+
+<hr class="my-4">
+
+<h4 class="fw-bold mb-4">Support a Cause</h4>
+
+<div class="row g-3 mb-4">
+
+<div class="col-md-4">
+<div class="donation-option">
+<h5>₹5000</h5>
+<p class="text-muted">Supports 10 Students</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="donation-option">
+<h5>₹10000</h5>
+<p class="text-muted">Supports 20 Students</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="donation-option">
+<h5>₹25000</h5>
+<p class="text-muted">Supports One School</p>
+</div>
+</div>
+
 </div>
 
 <hr class="my-4">
@@ -97,16 +157,23 @@ Use Google Pay, PhonePe, Paytm or any UPI app
 
 <img src="images/donate-qr.png" class="qr-img mt-3">
 
-<p class="mt-3 fw-bold" style="color:var(--brand-blue);">
+<p class="mt-3 upi-id">
 UPI ID: saarathi@sbi
+</p>
+
+<p class="text-muted">
+You may also donate any amount of your choice.
 </p>
 
 </div>
 
 </div>
+
 </div>
+
 </div>
 
 </body>
-</html>
 
+</html>
+```
